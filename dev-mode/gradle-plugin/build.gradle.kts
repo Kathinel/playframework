@@ -7,6 +7,7 @@ import java.util.Properties
 import kotlin.text.Charsets.UTF_8
 
 plugins {
+    `kotlin-dsl`
     alias(libs.plugins.gradle.plugin.publish)
     alias(libs.plugins.nexus.publish)
     alias(libs.plugins.spotless)
@@ -33,6 +34,7 @@ repositories {
 
 dependencies {
     compileOnly("org.playframework:play-routes-compiler_2.13:$playVersion")
+    implementation("org.playframework:play-run-support:$playVersion")
     testImplementation(libs.assertj)
     testImplementation(libs.commons.io)
     testImplementation(libs.freemarker)
